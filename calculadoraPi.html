@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+        <h1>LeakCalc</h1>
+
+        Quanto custa os equipamentos da sua cozinha?
+        <input id="input_equipamentos" type="text">
+        <br>
+
+        Quantos funcionários há operando na cozinha?
+        <input id="input_funcionarios" type="text">
+        <br>
+
+        Qual é a média de salário dos funcionários?
+        <input id="input_salario" type="text">
+        <br>
+
+        Quantos botijões há na cozinha?
+        <input id="input_botijao" type="text">
+        <br>
+
+        <button onclick="calcular()">O que posso estar perdendo?</button>
+
+        <hr>
+
+        <div id="div_mensagem"></div>
+
+    
+</body>
+</html>
+<script>
+            function calcular(){
+                var equipamentos = Number(input_equipamentos.value);
+                var funcionário = Number(input_funcionarios.value);
+                var botijão = Number(input_botijao.value) * 460;
+                var salario = Number(input_salario.value);
+                var salarios = (funcionário * salario);
+                var multa = (salarios * 2) / 3;
+                var gastos = equipamentos +  botijão + multa;
+
+             
+                
+
+                div_mensagem.innerHTML = `  Seus prejuizos: <br> <br>
+                                            Equipamentos: ${equipamentos} <br>
+                                            Botijão: ${botijão} <br>
+                                            Multa: ${multa} <br> `
+
+                 div_mensagem.innerHTML = div_mensagem.innerHTML + `<br> <b style=color:red> Com todos esses gastos o valor do seu prejuízo caso ocorresse um vazamento de gás seria de: ${gastos} </b>`
+
+        }
+
+
+
+</script>
